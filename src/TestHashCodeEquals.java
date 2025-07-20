@@ -2,21 +2,29 @@ import java.util.*;
 
 public class TestHashCodeEquals {
     public static void main(String[] args) {
-        Map<Person, String> map = new HashMap<>();
-        Set<Person> set = new HashSet<>();
+//        Map<Person, String> map = new HashMap<>();
+//        Set<Person> set = new HashSet<>();
+//
+//        Person person1 = new Person(1, "Саша");
+//        Person person2 = new Person(1, "Саша");
+//
+//        map.put(person1, "Один");
+//        map.put(person2, "Інше один");
+//
+//        set.add(person1);
+//        set.add(person2);
+//
+//        System.out.println(map);
+//        System.out.println(set);
 
-        Person person1 = new Person(1, "Саша");
-        Person person2 = new Person(1, "Саша");
 
-        map.put(person1, "Один");
-        map.put(person2, "Інше один");
+        Map<String, Integer> map =new HashMap<>();
 
-        set.add(person1);
-        set.add(person2);
+        map.put("Bob", 25);
+        map.put("Katy", 15);
+        map.put("Bill", 40);
 
-        System.out.println(map);
-        System.out.println(set);
-
+        Set<String> set = new HashSet<>();
     }
 }
 
