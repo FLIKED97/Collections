@@ -28,7 +28,7 @@ public class TestHashCodeEquals {
     }
 }
 
-class Person{
+class Person implements Comparable<Person>{
     private int id;
     private String name;
 
@@ -72,6 +72,15 @@ class Person{
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+    @Override
+    public int compareTo(Person o) {
+        if (this.name.length() > o.getName().length()){
+            return 1;
+        } else if (this.name.length() < o.getName().length()) {
+            return -1;
+        }
+            return 0;
     }
 
     /*
