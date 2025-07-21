@@ -1,25 +1,24 @@
 interface Executable{
 
-    int execute();
+    int execute(int x, int y);
 }
 class Runner{
     public void run(Executable e){
-      int a =  e.execute();
+      int a =  e.execute(10, 9);
         System.out.println(a);
     }
 }
 public class TestLambdaFirst {
     public static void main(String[] args) {
-        //Thread thread = new Thread(() -> System.out.println("Hello"));
         Runner runner = new Runner();
         runner.run(new Executable() {
             @Override
-            public int execute() {
+            public int execute(int x, int y) {
                 System.out.println("Hello");
 
-                return 1;
+                return x+y;
             }
         });
-        runner.run(() -> 5);
+        runner.run((x, y) -> x+y);
     }
 }
