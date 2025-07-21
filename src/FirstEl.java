@@ -7,7 +7,7 @@ public class FirstEl {
     }
 
     private static void findFirstEl(String string){
-        Map<Character, Integer> map = new LinkedHashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         char[] temp = string.toLowerCase(Locale.ROOT).toCharArray();
         for (char c : temp) {
             if (map.get(c) == null) {
@@ -18,10 +18,16 @@ public class FirstEl {
                 map.put(c, idx);
             }
         }
-        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-            if (entry.getValue() == 1) {
-                System.out.println(entry.getKey());
-            break;
+//        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+//            if (entry.getValue() == 1) {
+//                System.out.println(entry.getKey());
+//            break;
+//            }
+//        }
+        for (char c : temp) {
+            if (map.get(c) == 1){
+                System.out.println(map.get(c) + " " + c);
+                break;
             }
         }
     }
