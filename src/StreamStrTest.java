@@ -12,11 +12,13 @@ public class StreamStrTest {
 //         }
 //         return false;
 //        }).count();
-        long count = words.stream()
-                .filter( a -> a.chars()
-                        .anyMatch(c -> c == target))
-                .count();
-
-        System.out.println(count);
+//        long count = words.stream()
+//                .filter( a -> a.chars()
+//                        .anyMatch(c -> c == target))
+//                .count();
+//        System.out.println(count);
+        List<String> newList;
+        newList = words.stream().filter( a -> a.charAt(0) == target).toList();
+        System.out.println(newList);
     }
 }
